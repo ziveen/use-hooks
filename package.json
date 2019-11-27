@@ -1,0 +1,20 @@
+{
+  "name": "use-hook",
+  "version": "1.0.0",
+  "description": "记录日常用到react hooks",
+  "main": "index.js",
+  "author": "n1cy",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@storybook/react": "^5.2.6",
+    "babel-loader": "^8.0.6"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
