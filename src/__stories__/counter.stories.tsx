@@ -6,22 +6,23 @@ import {storiesOf} from "@storybook/react";
 
 
 function Counter({time,success}) {
-    const [count,setCount] = useState(time);
-    const [delay, setDelay] = useState<number | null>(null);
+    const [count,setCount] = useState<number>(time);
+    const [delay] = useState<number>(1000);
+    const [isRunning,setRunning] = useState<boolean>(false);
 
     const start = () => {
-        setDelay(1000)
+        setRunning(true);
     };
 
     useInterval(() => {
-        setCount(count -1);
+        setCount(count - 1);
         //  count明明是0 为什么是1呢，setCount异步？
-        if(count <= 1) {
+        if(count < 1) {
             success(count);
-            setCount(time);
-            setDelay(null);
+            setCount(0);
+            setRunning(false);
         }
-    }, count ? delay : null);
+    }, isRunning ? delay : null);
 
 
     return (

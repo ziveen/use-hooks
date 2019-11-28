@@ -6,8 +6,10 @@ cache:
 node.js:
   - 10
 script:
+  - yarn build
   - yarn build-storybook
 
-branchs:
-  - master
-  - gh-pages
+branches:
+  except:
+    - master
+    - gh-pages
