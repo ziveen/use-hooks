@@ -17,7 +17,9 @@ export function useInterval(fn: () => void,delay:number) {
             const id = setInterval(click, delay);
 
             return () => clearInterval(id)
-        }
+        } 
+
+        return () => {}
     },[delay])
 
 }
