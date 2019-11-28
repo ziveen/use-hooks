@@ -1,13 +1,13 @@
 import * as React from "react";
 import { useState,} from 'react';
-import {useInterval} from '../src/use-interval';
+import {useInterval} from '../use-interval';
 import { Button } from '@storybook/react/demo';
 import {storiesOf} from "@storybook/react";
 
 
 function Counter({time,success}) {
     const [count,setCount] = useState(time);
-    const [delay, setDelay] = useState(null);
+    const [delay, setDelay] = useState<number | null>(null);
 
     const start = () => {
         setDelay(1000)

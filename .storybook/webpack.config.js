@@ -16,7 +16,7 @@ module.exports = {
                     transpileOnly:true,
                     compilerOptions: {
                         ...compilerOptions,
-                        declare: false
+                        declaration: false
                     }
                 }
             }

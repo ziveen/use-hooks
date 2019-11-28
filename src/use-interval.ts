@@ -1,7 +1,7 @@
 import {useEffect,useRef} from "react";
 import * as React from "react";
 
-export function useInterval(fn: () => void,delay:number) {
+export function useInterval(fn: Function,delay?:number | null) {
     const saveCallback:React.MutableRefObject<any> = useRef();
 
     useEffect(() => {
@@ -14,12 +14,12 @@ export function useInterval(fn: () => void,delay:number) {
         }
 
         if(delay !== null) {
-            const id = setInterval(click, delay);
+            const id = setInterval(click, delay || 0);
 
             return () => clearInterval(id)
         } 
 
-        return () => {}
+        return undefined
     },[delay])
 
 }
