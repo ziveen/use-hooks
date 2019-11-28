@@ -25,7 +25,8 @@
     "build:es": "tsc -m esNext --outDir esm",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "storybook:upload": "gh-pages -d storybook-static --git \"$(which git)\""
+    "storybook:upload": "gh-pages -d storybook-static --git \"$(which git)\"",
+    "clean": "yarn rimraf lib esm storybook-static"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -47,6 +48,7 @@
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
+    "rimraf": "^3.0.0",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.2"
@@ -62,7 +64,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn build"
+      "pre-push": "yarn clean && yarn build"
     }
   },
   "lint-staged": {
