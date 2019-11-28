@@ -7,12 +7,13 @@
   "license": "MIT",
   "scripts": {
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook -c .storybook -o .out"
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@storybook/react": "^5.2.6",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "gh-pages": "^2.1.1"
   },
   "dependencies": {
     "react": "^16.12.0",
