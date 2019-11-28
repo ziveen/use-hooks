@@ -1,0 +1,13 @@
+language: node.js
+os:
+  - linux
+cache:
+  yarn: true
+node.js:
+  - 10
+script:
+  - yarn build-storybook
+
+branchs:
+  - master
+  - gh-pages

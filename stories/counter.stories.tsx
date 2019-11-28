@@ -1,8 +1,9 @@
-import React, {useCallback, useEffect, useState} from "react";
+import * as React from "react";
+import { useState,} from 'react';
 import {useInterval} from '../src/use-interval';
 import { Button } from '@storybook/react/demo';
+import {storiesOf} from "@storybook/react";
 
-export default {title: "定时器"}
 
 function Counter({time,success}) {
     const [count,setCount] = useState(time);
@@ -39,3 +40,6 @@ export function Countdown() {
         <Counter time={5} success={successCallback}/>
     )
 }
+
+storiesOf("计时器",module)
+    .add("Countdown", () => <Countdown />);
