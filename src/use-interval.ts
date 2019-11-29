@@ -1,7 +1,7 @@
-import {useEffect,useRef} from "react";
-import * as React from "react";
+import { useEffect,useRef } from 'react';
+import * as React from 'react';
 
-export function useInterval(fn: Function,delay?:number | null) {
+function useInterval(fn: Function, delay?: number | null) {
     const saveCallback:React.MutableRefObject<any> = useRef();
 
     useEffect(() => {
@@ -23,3 +23,5 @@ export function useInterval(fn: Function,delay?:number | null) {
     },[delay])
 
 }
+
+export { useInterval }
