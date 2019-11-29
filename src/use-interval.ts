@@ -20,7 +20,7 @@ function useInterval(fn: Function, delay?: number | null) {
         } 
 
         return undefined
-    },[delay])
+    }, [delay])
 
 }
 

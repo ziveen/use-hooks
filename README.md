@@ -3,8 +3,8 @@
 记录自己用的一些自定义hooks
 
 # todoList
-- [x]typescript  
+- [x] typescript  
 - [x] eslint   
 - [ ] test  
 - [x] static pages  
-- [ ] ci
+- [x] ci
