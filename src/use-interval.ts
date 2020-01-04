@@ -1,8 +1,7 @@
-import { useEffect,useRef } from 'react';
-import * as React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 function useInterval(fn: Function, delay?: number | null) {
-    const saveCallback:React.MutableRefObject<any> = useRef();
+    const saveCallback: React.MutableRefObject<any> = useRef();
 
     useEffect(() => {
         saveCallback.current = fn;
@@ -13,15 +12,14 @@ function useInterval(fn: Function, delay?: number | null) {
             saveCallback.current();
         }
 
-        if(delay !== null) {
+        if (delay !== null) {
             const id = setInterval(click, delay || 0);
 
-            return () => clearInterval(id)
-        } 
+            return () => clearInterval(id);
+        }
 
-        return undefined
-    }, [delay])
-
+        return undefined;
+    }, [delay]);
 }
 
 export { useInterval }
