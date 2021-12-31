@@ -1,15 +1,17 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
-const useInterval = (fn: Function, delay?: number | null) => {
-  const saveCallback = useRef();
+type Callback = () => void;
+
+const useInterval = (fn: Callback, delay?: number | null) => {
+  const ref = useRef<Callback>();
 
   useEffect(() => {
-    saveCallback.current = fn;
+    ref.current = fn;
   });
 
   useEffect(() => {
     function click() {
-      saveCallback.current();
+      ref.current!();
     }
 
     if (delay !== null) {

@@ -3,7 +3,13 @@ import { Button } from "@storybook/react/demo";
 import { storiesOf } from "@storybook/react";
 import { useInterval, useStateWithCallback } from "../index";
 
-function Counter({ time, success }) {
+function Counter({
+  time,
+  success,
+}: {
+  time: number;
+  success: (v: number) => void;
+}) {
   const [count, setCount] = useStateWithCallback(time);
   const [delay] = useState(1000);
   const [isRunning, setRunning] = useState(false);
