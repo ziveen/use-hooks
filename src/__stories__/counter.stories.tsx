@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Button } from '@storybook/react/demo';
-import { storiesOf } from '@storybook/react';
-import { useInterval, useStateWithCallback } from '../index';
+import React, { useState } from "react";
+import { Button } from "@storybook/react/demo";
+import { storiesOf } from "@storybook/react";
+import { useInterval, useStateWithCallback } from "../index";
 
 function Counter({ time, success }) {
   const [count, setCount] = useStateWithCallback(time);
@@ -35,9 +35,9 @@ function Counter({ time, success }) {
 
 export function Countdown() {
   const successCallback = (data) => {
-    console.log('完成计时' + data);
+    console.log("完成计时" + data);
   };
   return <Counter time={5} success={successCallback} />;
 }
 
-storiesOf('计时器', module).add('Countdown', () => <Countdown />);
+storiesOf("计时器", module).add("Countdown", () => <Countdown />);
