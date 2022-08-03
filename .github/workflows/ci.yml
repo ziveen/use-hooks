@@ -3,9 +3,21 @@ on:
   push:
     branches:
       - master
+strategy:
+  matrix:
+    node-version: [16]
     
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@af513c7a016048ae468971c52ed77d9562c7c819 # renovate: tag=v1.0.0
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: action/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Project
+        run:  npm install
+      - name: Build
+        run: npm run build
