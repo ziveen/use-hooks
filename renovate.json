@@ -3,6 +3,7 @@
     "extends": ["config:base"],
     "packageRules":[
         {
+            "matchDepTypes": ["devDependencies", "dependencies"],
             "updateTypes": [
               "minor",
               "patch"
