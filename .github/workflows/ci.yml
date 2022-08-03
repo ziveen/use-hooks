@@ -1,8 +1,8 @@
-name: cli
+name: ci
 on:
   push:
-    branchs:
-      - *
+    branches:
+      - master
     
 jobs:
   build:
